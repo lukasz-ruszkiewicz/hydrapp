@@ -88,5 +88,11 @@ module.exports = {
       chunks: ["index", "another"],
       filename: "another.html",
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/hydrapp.html",
+      inject: true,
+      chunks: ["index",],
+      filename: "hydrapp.html",
+    }),
   ],
 };

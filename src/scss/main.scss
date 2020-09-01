@@ -3,11 +3,67 @@
 @import "_variables";
 @import "modules/hello.scss";
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 body {
-  background: $wtf;
+  background: #3767AD;
+  font-family: Roboto, sans serif;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+}
+
+.hydrapp
+{
+
+  display:grid;
+  grid-template-rows: 203px 300px 100px 20px;
+  grid-template-areas: "header"
+  "image"
+  "button-add"
+  "button-remove";
+
+  &__header
+  {
+    grid-area:header;
+    font-size:55px;
+    font-weight:normal;
+    margin-left:50px;
+    margin-bottom:100px;
+  }
+  &__image
+  {
+    grid-area:image; 
+  }
+  &__counter
+  {
+    
+    font-weight: bold;
+    font-size: 112px;
+    color:black;
+    text-align:center;
+    transform: translateY(-150%);
+
+  }
+
+  &__button
+  {
+   &--add
+   {
+    width: 216px;
+    height: 47px;
+    margin-left: 12%;
+    grid-area:button-add;
+   }
+   &--remove
+   {
+    grid-area:button-remove;
+    border-style:none;
+    background-color:rgba(17, 17, 17, 0);
+    color:white;
+  
+   }
+  }
 }
