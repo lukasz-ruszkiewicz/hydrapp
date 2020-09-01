@@ -11,3 +11,39 @@ console.log('HELLO 🚀')
 const buttonAdd = document.querySelector('.hydrapp__button--add');
 const buttonRemove = document.querySelector('.hydrapp__button--remove');
 const counter = document.querySelector('.hydrapp__counter');
+
+const key = new Date().toISOString().slice(0, 10)
+
+let counterNumber = 0;
+
+counter.innerHTML = `${counterNumber}`;
+
+buttonAdd.addEventListener('click', addGlass);
+buttonRemove.addEventListener('click', removeGlass);
+
+function addGlass()
+{
+    if(counterNumber < 10)
+    {
+        counterNumber++;
+        counter.innerHTML = `${counterNumber}`;
+        localStorage.setItem("date",key);
+        localStorage.setItem("glasses",counterNumber);
+    }
+    else console.log("Can't add more than 10 glasses");
+    
+    
+}
+
+function removeGlass()
+{
+    if(counterNumber > 0)
+    {
+    counterNumber--;
+    counter.innerHTML = `${counterNumber}`;
+    
+    
+    }
+    else console.log("Can't remove from 0 glasses");
+    
+}
